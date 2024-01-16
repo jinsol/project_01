@@ -50,23 +50,23 @@ img {
   border: 0px solid white;
 }
 
-#header > .row > h1,
-#header > .row > #nav {
+#header .row h1,
+#header .row #nav {
   display: flex;
   align-items: center;
   height: inherit;
 }
 
-#header > .row > h1 {
+#header .row h1 {
   float: left;
   padding: 20px 0;
 }
 
-#header > .row > #nav {
+#header .row #nav {
   float: right;
 }
 
-#header > .row > #nav > .depth1 > li {
+#header .row #nav .depth1 li {
   float: left;
   margin-left: 70px;
   font-weight: bold;
@@ -78,22 +78,22 @@ img {
   border-top: 3px solid transparent;
 }
 
-#header > .row > #nav > .depth1 > li:hover {
+#header .row #nav .depth1 li:hover {
   color: #45639d;
   border-top: 3px solid #45639d;
 }
 
-#header > .row > #nav > .depth1 > li:hover > .depth2 {
+#header .row #nav .depth1 li:hover .depth2 {
   /* display: block; */
   visibility: visible;
   opacity: 1;
 }
 
-#header > .row > #nav li > a {
+#header .row #nav li a {
   display: block;
 }
 
-#header > .row > #nav > .depth1 > li > .depth2 {
+#header .row #nav .depth1 li .depth2 {
   position: absolute;
   /* display: none; */
   width: 200px;
@@ -107,7 +107,7 @@ img {
   transition: visibility 0s, opacity 0.5s;
 }
 
-#header > .row > #nav > .depth1 > li > .depth2 > li > a {
+#header .row #nav .depth1 li .depth2 li a {
   background-color: white;
   color: #212934;
   font-weight: 500;
@@ -119,11 +119,88 @@ img {
   transition: all 0.2s;
 }
 
-#header > .row > #nav > .depth1 > li > .depth2 > li > a:hover {
+#header .row #nav .depth1 li .depth2 li a:hover {
   background-color: #f9f9fb;
 }
 
 /* ========================================== */
+
+/* 슬라이더 구역 */
+
+#section .slideOuter {
+  position: relative;
+}
+
+#section .slideOuter .slideInner {
+  position: relative;
+}
+
+#section .slideOuter .slideInner button.slick-arrow {
+  color: white;
+  border: none;
+  background: none;
+  font-size: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 99;
+  cursor: pointer;
+}
+
+#section .slideOuter .slideInner button.slick-prev {
+  left: 50px;
+}
+
+#section .slideOuter .slideInner button.slick-next {
+  right: 50px;
+}
+
+#section .slideOuter .slideInner ul.slick-dots {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30px;
+}
+
+#section .slideOuter .slideInner .slick-dots li {
+  display: inline-block;
+  margin: 0 4px;
+}
+
+#section .slideOuter .slideInner .slick-dots li button {
+  border: none;
+  background-color: #fff;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-indent: 400px;
+  overflow: hidden;
+}
+
+#section .slideOuter .slideInner .slick-dots li.slick-active button {
+  background-color: #58aedd;
+  width: 100px;
+  border-radius: 50px;
+}
+
+#section .slideOuter .slideInner .slick-dots li button:hover {
+  background-color: gray;
+}
+
+/* 슬라이더 자동재생멈춤 버튼 */
+
+#section .plapau {
+  position: absolute;
+  bottom: 29.5px;
+  left: 50%;
+  margin-left: 77px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
 
 #section .slide {
   /* 자식이 부모를 기준으로 배치될 때 부모한테 주는 속성 */
@@ -148,12 +225,24 @@ img {
 
 #section .slide .text h2 {
   font-size: 100px;
+  opacity: 0;
+  transform: translate3d(0, 100%, 0);
+}
+
+#section .slick-slide.slick-current.slick-active .slide .text h2 {
+  animation: fadeInUp 1s 1 both 0.3s;
 }
 
 #section .slide .text p {
   font-size: 22px;
   font-weight: 300;
   margin: 50px 0 80px 0;
+  opacity: 0;
+  transform: translate3d(0, 100%, 0);
+}
+
+#section .slick-slide.slick-current.slick-active .slide .text p {
+  animation: fadeInUp 1s 1 both 0.6s;
 }
 
 #section .slide .text a {
@@ -163,41 +252,50 @@ img {
   background: #fff;
   color: #58aedd;
   font-weight: bold;
+  opacity: 0;
+  display: inline-block;
+  transform: translate3d(0, 100%, 0);
 }
 
-#section > .business {
+#section .slick-slide.slick-current.slick-active .slide .text a {
+  animation: fadeInUp 1s 1 both 1s;
+}
+
+/* ========================================== */
+
+#section .business {
   text-align: center;
 }
 
-#section > .business > ul > li {
+#section .business ul li {
   width: 25%;
   padding: 100px 30px;
   float: left;
   height: 600px;
 }
 
-#section > .business > ul > li:nth-child(2n) {
+#section .business ul li:nth-child(2n) {
   background-color: #edf0f4;
 }
 
-#section > .business > ul > li > img {
+#section .business ul li img {
   border-bottom: 2px solid #e0dede;
   padding: 30px;
 }
 
-#section > .business > ul > li > h3 {
+#section .business ul li h3 {
   font-size: 30px;
   margin: 20px 0 50px 0;
   color: #333;
 }
 
-#section > .business > ul > li > h3 > span {
+#section .business ul li h3 span {
   display: block;
 
   font-weight: 200;
 }
 
-#section > .business > ul > li > p > a {
+#section .business ul li p a {
   background-color: #45639d;
   color: #fff;
   font-weight: bold;
@@ -207,12 +305,12 @@ img {
   transition: all 0.2s;
 }
 
-#section > .business > ul > li > p > a:hover {
+#section .business ul li p a:hover {
   background-color: #fff;
   color: #45639d;
 }
 
-#section > .product {
+#section .product {
   width: 100%;
   min-height: 480px;
   padding: 100px 0;
@@ -220,23 +318,23 @@ img {
   position: relative;
   background: url(../image/product_bg.jpg) center/cover;
 }
-#section > .product > .row > div {
+#section .product .row div {
   float: left;
   width: 50%;
 }
 
-#section > .product .product_text > h2 {
+#section .product .product_text h2 {
   font-size: 70px;
 }
 
-#section > .product .product_text > p {
+#section .product .product_text p {
   font-size: 24px;
   font-weight: 200;
   margin: 30px 0;
   line-height: 1.5em;
 }
 
-#section > .product .product_text > .btn > a {
+#section .product .product_text .btn a {
   padding: 12px 30px;
   font-size: 14px;
   border: 2px solid white;
@@ -250,17 +348,17 @@ a.detail_btn {
   color: #333;
 }
 
-#section > .product > .row > .product_image {
+#section .product .row .product_image {
   padding-top: 70px;
 }
 
-#section > .customer {
+#section .customer {
   text-align: center;
   background-color: #edf0f4;
   padding: 100px 0;
 }
 
-#section > .customer > .row > h2 {
+#section .customer .row h2 {
   font-size: 70px;
   color: #333;
   font-weight: 400;
@@ -268,38 +366,38 @@ a.detail_btn {
   letter-spacing: -2px;
 }
 
-#section > .customer > .row > div {
+#section .customer .row div {
   margin: 30px 0;
 }
 
-#section > .customer > .row > div > span {
+#section .customer .row div span {
   width: 33.33%;
   padding: 0 14px;
   float: left;
 }
 
-#section > .customer > .row > div > span > img {
+#section .customer .row div span img {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-#footer > div {
+#footer div {
   width: 100%;
   font-weight: 400;
   padding: 30px 0;
 }
 
-#footer > .footer_address {
+#footer .footer_address {
   background-color: #212934;
   color: #666;
   font-size: 16px;
 }
 
-#footer > .footer_address pre {
+#footer .footer_address pre {
   line-height: 1.5em;
   margin: 16px 0;
 }
 
-#footer > .footer_copyright {
+#footer .footer_copyright {
   background-color: #1d242d;
   color: rgba(255, 255, 255, 0.4);
   font-size: 13px;
