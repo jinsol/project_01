@@ -9,6 +9,16 @@
 @media screen and (max-width: 899px) {
   #header {
     background: white;
+    position: static;
+    height: auto;
+  }
+
+  #header .row {
+    padding: 0;
+  }
+
+  #header h1 {
+    padding-left: 20px;
   }
 
   #header .menuopen {
@@ -17,13 +27,56 @@
     font-size: 26px;
     line-height: 100px;
     color: gray;
-  }
-
-  #header > .row > #nav {
-    display: none;
+    margin-right: 10px;
   }
 
   #header .row h1 a {
     background-image: url(../image/LOGO_black.png);
+  }
+
+  #header .row #nav {
+    width: 100%;
+    /* 자바스크립트 액션으로 햄버거 메뉴 활성화할 예정 */
+  }
+
+  #header .row #nav .depth1 > li {
+    float: none;
+    background-color: white;
+    margin-left: 0;
+    border-top: 0px solid transparent;
+    font-size: 12px;
+    font-weight: 500;
+    height: auto;
+    line-height: 42px;
+  }
+
+  #header .row #nav .depth1 > li:hover {
+    color: black;
+    border-top: 0px solid #45639d;
+  }
+
+  #header .row #nav .depth1 > li > a {
+    color: rgb(71, 75, 84);
+    border-top: 1px solid #d4d4d4;
+    padding-left: 30px;
+  }
+
+  #header .row #nav .depth1 > li .depth2 {
+    display: block;
+    position: static;
+    width: 100%;
+    border-top: 0px solid #45639d;
+  }
+
+  #header .row #nav .depth1 > li .depth2 > li > a {
+    padding: 0 0 0 60px;
+    font-size: 12px;
+    line-height: 42px;
+    border-top: 1px solid #d4d4d4;
+    color: rgb(71, 75, 84);
+  }
+
+  #header .row #nav .depth1 > li a:hover {
+    background-color: #f9f9fb;
   }
 }

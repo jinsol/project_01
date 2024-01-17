@@ -111,8 +111,6 @@ img {
   top: 100%;
   border-top: 3px solid #45639d;
   line-height: normal;
-  transition: all 0.3s;
-
   transition: all 0.5s;
 }
 
