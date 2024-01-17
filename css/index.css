@@ -30,6 +30,17 @@ img {
   vertical-align: middle; /* 공백 생길 때 */
 }
 
+.blind {
+  position: absolute;
+  left: -9999px;
+  overflow: hidden;
+}
+
+.row {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
 /* 본문-------------------------------------------------- */
 
 #header {
@@ -41,34 +52,35 @@ img {
   left: 0;
   width: 100%;
   z-index: 99; /* 박스겹침이 발생했을 때 겹치는 순서 제어. 높은 값이 위로 올라옴 */
-}
-
-.row {
-  max-width: 1300px;
-  margin: 0 auto;
-  height: inherit;
-  border: 0px solid white;
-}
-
-#header .row h1,
-#header .row #nav {
-  display: flex;
-  align-items: center;
-  height: inherit;
+  transition: all 0.3s;
 }
 
 #header .row h1 {
   float: left;
-  padding: 20px 0;
+  /* padding: 20px 0; */
 }
 
 #header .row #nav {
   float: right;
 }
 
+#header .row h1 a {
+  height: 100px;
+  width: 250px;
+  display: block;
+  background-image: url(../image/LOGO_white.png);
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#header .menuopen {
+  display: none;
+}
+
 #header .row #nav .depth1 > li {
   float: left;
-  margin-left: 70px;
+  margin-left: 50px;
   font-weight: bold;
   font-size: 16px;
   transition: all 0.3s;
@@ -84,8 +96,7 @@ img {
 }
 
 #header .row #nav .depth1 > li:hover .depth2 {
-  /* display: block; */
-  visibility: visible;
+  display: block;
   opacity: 1;
 }
 
@@ -95,16 +106,14 @@ img {
 
 #header .row #nav .depth1 > li .depth2 {
   position: absolute;
-  /* display: none; */
+  display: none;
   width: 200px;
   top: 100%;
   border-top: 3px solid #45639d;
   line-height: normal;
   transition: all 0.3s;
 
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.5s;
+  transition: all 0.5s;
 }
 
 #header .row #nav .depth1 > li .depth2 > li > a {
