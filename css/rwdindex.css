@@ -6,7 +6,7 @@
   }
 }
 
-@media screen and (max-width: 899px) {
+@media screen and (max-width: 910px) {
   #header {
     background: white;
     position: static;
@@ -78,5 +78,69 @@
 
   #header .row #nav .depth1 > li a:hover {
     background-color: #f9f9fb;
+  }
+
+  /* ========================================== */
+  /* 
+  #section .slide .text {
+    width: 80%;
+  } */
+
+  #section .slide .text h2 {
+    font-size: 40px;
+  }
+
+  #section .slide .text p {
+    display: none;
+    font-size: 16px;
+    margin: 5px 0 30px 0;
+  }
+
+  #section .slide .text p span {
+    display: inline;
+  }
+
+  #section .slide .text a {
+    font-size: 13px;
+    padding: 12px 25px;
+  }
+
+  #section .slideOuter .slideInner button.slick-prev {
+    left: 20px;
+  }
+
+  #section .slideOuter .slideInner button.slick-next {
+    right: 20px;
+  }
+
+  /* ========================================== */
+
+  #section .business ul li {
+    width: 100%;
+  }
+
+  /* ========================================== */
+
+  #section .product .row div {
+    width: 100%;
+  }
+
+  #section .product .product_text h2 {
+    font-size: 50px;
+  }
+  #section .product .product_text p {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  /* ========================================== */
+
+  #section .customer .row h2 {
+    font-size: 50px;
+  }
+
+  #section .customer .row div span {
+    width: 100%;
+    margin-bottom: 20px;
   }
 }
