@@ -222,7 +222,8 @@ img {
 }
 
 #section .slide img {
-  width: 100%;
+  width: auto;
+  min-height: 372px;
 }
 
 #section .slide .text {
